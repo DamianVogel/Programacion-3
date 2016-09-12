@@ -23,8 +23,6 @@
 <body>
 		<div class="CajaInicio animated bouncheInRight "> 
 
-
-<?php //var_dump($_POST); ?>
 		
 		<?php  
 			$resultado=0;

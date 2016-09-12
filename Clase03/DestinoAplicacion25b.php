@@ -6,8 +6,8 @@
 	<script>
 		function Volver() {
 	    
-	   window.history.back()		
-		
+	window.history.back()		
+	document.getElementById("form1").reset();				
 		}
 	
 
