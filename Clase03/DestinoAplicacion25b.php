@@ -1,7 +1,3 @@
-
-
-<?php  ?>
-
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
@@ -23,8 +19,6 @@
 <body>
 		<div class="CajaInicio animated bouncheInRight "> 
 
-
-<?php //var_dump($_POST); ?>
 		
 		<?php  
 			$resultado=0;
@@ -36,19 +30,8 @@
 		?>		
 
 
-		<form method="post" name="form1" id="SuperficieDelRectangulo">
-						
-
-
-
-						<?php  if($resultado==0){?> 
-						
-							<input type="text" 		name="base"					placeholder="Ingrese la base"> 										
-							<input type="text"		name="altura"				placeholder="Ingrese la altura"> 
-							<input type="submit" 	class="MiBotonUTNJuego">
-							<input type="reset" 	class="MiBotonUTNJuego">
-					
-						<?php } ?>
+		<form method="post" name="form1" id="DestinoSuperficie">
+										
 
 				<?php if(isset($_POST['base']) && isset($_POST['altura'])) {  ?>
 							

@@ -1,5 +1,3 @@
-
-
 <?php  ?>
 
 <html>
@@ -23,8 +21,6 @@
 <body>
 		<div class="CajaInicio animated bouncheInRight "> 
 
-
-<?php //var_dump($_POST); ?>
 		
 		<?php  
 			$resultado=0;
@@ -36,7 +32,7 @@
 		?>		
 
 
-		<form method="post" name="form1" id="SuperficieDelRectangulo">
+		<form action="DestinoAplicacion25b.php" method="post" name="form1" id="SuperficieDelRectangulo">
 						
 
 
