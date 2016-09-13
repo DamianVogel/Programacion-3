@@ -38,13 +38,41 @@ public static function Leer ()
 	while(!FeoF($archivo))
 	{
 		$renglon=fgets($archivo);
-		$listaDeAutos[]=$renglon;	
+		$auto=explode("=>",$renglon);
+
+		$listaDeAutos[]=$auto;	
+	
+
 	}
 
 	fclose($archivo);
 
 	return $listaDeAutos;
 }
+
+public static function Sacar ($patente)
+{
+	$listaDeAutos = Estacionamiento::Leer();
+	$flag=0;
+	
+	foreach ($listaDeAutos as $auto) {
+		if($patente == $auto[0])
+			{
+				$ahora=date("Y-m-d H:i:s");	
+				$diferencia=strtotime($ahora)-strtotime($auto[1]);
+				echo "Tiempo transcurrido . $diferencia";
+				$flag=1;
+			}		
+	}
+
+	if($flag==0)
+	{
+		echo "No se encuentra el auto";
+	}
+
+
+}
+
 
 
 
