@@ -5,8 +5,11 @@
 
 
 	<title></title>
+
+
 </head>
-<body>
+
+
 		<div class="CajaInicio animated bouncheInRight "> 
 		
 		<form action="Nexo.php" method="post" name="form" id="estacionamiento">
