@@ -27,13 +27,13 @@
 if(isset($_POST['fname']))
   {
     $dia = getdate(date('U'));
-    $size=150;
+    
     //echo var_dump($dia);
   switch ($_POST['fname']) {
                               case '1':    
                                            
                                           ?>
-                                                      <Br> <input type="text" name="muestra1" width="<?php $size; ?>" value="<?php echo "Hoy es ".$dia['mday']."/".$dia['mon']."/".$dia['year']." y son las ".$dia['hours'].":".$dia['minutes'].":".$dia['seconds']; ?>" readonly>  
+                                                      <Br> <input type="text" name="muestra1" value="<?php echo "Hoy es ".$dia['mday']."/".$dia['mon']."/".$dia['year']." y son las ".$dia['hours'].":".$dia['minutes'].":".$dia['seconds']; ?>" readonly>  
                                           <?php
                                               
                               break;                          
