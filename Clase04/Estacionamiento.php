@@ -1,4 +1,11 @@
 <html>
+		
+		<?php 
+		include("php/ClaseEstacionamiento.php");
+		estacionamiento::CrearTabla(); 
+		?>
+
+
 <head>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link rel="stylesheet" type="text/css" href="animacion.css">
@@ -8,7 +15,8 @@
 
 
 </head>
-
+		 
+		
 
 		<div class="CajaInicio animated bouncheInRight "> 
 		
@@ -26,6 +34,8 @@
 
 
 </div>
+
+	<?php include("TablaDeEstacionados.php"); ?>
 </body>
 </html>
 
