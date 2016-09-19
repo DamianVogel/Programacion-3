@@ -121,13 +121,16 @@
 		
 		$archivo=fopen("TablaDeEstacionados.php","w");
 
-		$cabecera = "<table border=2> <th>Patente </th> <th> Ingreso<th>";
+		$cabecera = "<table border=2> <th>Patente </th> <th> Ingreso<th/>";
 
 		$cuerpo = "";
 
 		foreach ($listaDeAutos as $auto ) 
 			{
-				$cuerpo = "<tr>".$cuerpo.$auto[0]."</tr>";			
+				if($auto[0]!="")
+				{
+				$cuerpo = $cuerpo."<tr><td>".$auto[0]."</td><td>".$auto[1]."</td></tr>";			
+				}
 			}
 
 		$tablaEntera = $cabecera.$cuerpo."</table>";
