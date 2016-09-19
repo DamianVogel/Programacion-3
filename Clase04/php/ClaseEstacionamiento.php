@@ -55,6 +55,9 @@ public static function Sacar ($patente)
 	$listaDeAutos = Estacionamiento::Leer();
 	$flag=0;
 	
+	$listaDeAutosPresentes = array();
+	
+
 	foreach ($listaDeAutos as $auto) {
 		if($patente == $auto[0])
 			{
@@ -63,18 +66,43 @@ public static function Sacar ($patente)
 				echo "Tiempo transcurrido . $diferencia";
 				$flag=1;
 			}		
-	}
+			else
+			{
+				$listaDeAutosPresentes[]=$auto;
+
+			}
+
+							}//Termina el foreach
 
 	if($flag==0)
 	{
 		echo "No se encuentra el auto";
 	}
-
+		Estacionamiento::GuardarLista($listaDeAutosPresentes);
 
 }
 
+public static function GuardarLista ($lista)
+{
+	
+
+	$archivo = fopen("estacionados.txt", "w");
+
+	foreach ($lista as $auto) 
+			{
+				if($auto[0]!="")
+					{
+						$dato = $auto[0]."=>".$auto[1];
+						fwrite($archivo, $dato);
+						
+					}	
+
+			}		
+
+	fclose($archivo);		
 
 
+}
 
 }
 

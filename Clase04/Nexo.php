@@ -21,5 +21,5 @@ if(isset($_POST['Salida']))
 
 
 
-
+header("location:Estacionamiento.php");
 ?>
