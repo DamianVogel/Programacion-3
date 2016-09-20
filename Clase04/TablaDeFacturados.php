@@ -3,4 +3,5 @@
 </td></tr><tr><td>ASD123</td> <td>243.68
 </td></tr><tr><td>lxu031</td> <td>0.72
 </td></tr><tr><td>juan</td> <td>0.48
+</td></tr><tr><td>QRT587</td> <td>88.16
 </td></tr>

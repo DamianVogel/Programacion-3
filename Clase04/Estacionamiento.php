@@ -23,25 +23,23 @@
 
 		<div class="CajaInicio animated bouncheInRight swing"> 
 		
-		<form action="Nexo.php" method="post" name="form" id="estacionamiento">
+			<form action="Nexo.php" method="post" name="form" id="estacionamiento">
 														
 				<input type="text" 		name="patente"					placeholder="Patente">
 				
 				<button  class="MiBotonUTNMenu" name="Entrada"> Entrada </button>
 				<button  class="MiBotonUTNMenu" name="Salida"> Salida  </button>
 				
+			</form>
+		
+		</div>
 				
-				
+				<div class="animated bouncheInLeft swing" align="left"> <?php include("TablaDeEstacionados.php"); ?> </div>
+
+				<div class="animated bouncheInRight swing" align="right"> <?php include("TablaDeFacturados.php"); ?> </div>
 			
-		</form>
 
 
-</div>
-
-	<?php 
-	include("TablaDeEstacionados.php"); 
-	include("TablaDeFacturados.php");
-	?>
 
 </body>
 </html>
