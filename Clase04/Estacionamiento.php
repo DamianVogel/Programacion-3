@@ -2,7 +2,10 @@
 		
 		<?php 
 		include("php/ClaseEstacionamiento.php");
+		
 		estacionamiento::CrearTabla(); 
+		estacionamiento::TablaFacturacion();
+
 		?>
 
 
@@ -18,7 +21,7 @@
 		 
 		
 
-		<div class="CajaInicio animated bouncheInRight "> 
+		<div class="CajaInicio animated bouncheInRight swing"> 
 		
 		<form action="Nexo.php" method="post" name="form" id="estacionamiento">
 														
@@ -35,7 +38,11 @@
 
 </div>
 
-	<?php include("TablaDeEstacionados.php"); ?>
+	<?php 
+	include("TablaDeEstacionados.php"); 
+	include("TablaDeFacturados.php");
+	?>
+
 </body>
 </html>
 

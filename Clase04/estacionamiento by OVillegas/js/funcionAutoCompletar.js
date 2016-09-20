@@ -1,7 +1,7 @@
 $(function(){
 			  var patentes = [ 
 
-			   {value: "lxu031" , data: " 2016-09-19 00:12:39 " }, 
+			   {value: "asd123" , data: " 2016-09-20 01:57:54 " }, 
 
 			   
 			  ];

@@ -33,21 +33,25 @@
 		//La manera de agregar elementos.
 		//$listaDeAutos[]=
 
-		$archivo = fopen("estacionados.txt", "r");
+		if(file_exists("estacionados.txt"))
+			{
+				$archivo = fopen("estacionados.txt", "r");
 
-		while(!FeoF($archivo))
-		{
-			$renglon=fgets($archivo);
-			$auto=explode("=>",$renglon);
+				while(!FeoF($archivo))
+				{
+					$renglon=fgets($archivo);
+					$auto=explode("=>",$renglon);
 
-			$listaDeAutos[]=$auto;	
-		
+					$listaDeAutos[]=$auto;	
+				
 
-		}
+				}
 
-		fclose($archivo);
-
+				fclose($archivo);
+			}
+	
 		return $listaDeAutos;
+	
 	}
 
 	public static function Sacar ($patente)
@@ -67,7 +71,7 @@
 					
 					$archivoFact = fopen("facturacion.txt", "a");
 
-					$renglon = $auto[0]."=>".$diferencia*0.08;
+					$renglon = $auto[0]."=>".$diferencia*0.08."\n";
 
 					fwrite($archivoFact, $renglon);
 
@@ -141,7 +145,44 @@
 
 	}
 
+	public static function TablaFacturacion()
+	{
+		$fileFact=fopen("facturacion.txt","r");
 
+		$arrayFact=array();
+
+		while(!FeoF($fileFact))
+		{
+			
+			$renglon = fgets($fileFact);
+			$facturado = explode("=>", $renglon);
+		
+			$arrayFact[]=$facturado;
+		}
+
+		fclose($fileFact);
+
+		$fileTabla = fopen("TablaDeFacturados.php", "w");
+
+		$cabecera = "<table border=1> <th>Patente</th><th>Importe</th>";
+
+		$renglon="";
+
+		foreach ($arrayFact as $facturado) 
+		{
+			if($facturado[0]!="")
+			{
+				$renglon=$renglon."<tr><td>".$facturado[0]."</td> <td>".$facturado[1]."</td></tr>";
+
+			}
+		}
+
+		$tablaEntera = $cabecera.$renglon;
+
+		fwrite($fileTabla, $tablaEntera);
+		fclose($fileTabla);
+	
+	}
 
 
 
