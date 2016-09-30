@@ -47,10 +47,21 @@ function MostrarSinParametros()
 
 	// });
 	
-	$.ajax({url:"nexoTexto.php"}).then(function(respuesta){
-			$("#principal").html(respuesta);
-	},function(){
 
+	//ACA EMPECE YO!
+	// $.ajax({url:"nexoTexto.php"}).then(function(respuesta){
+	// 		$("#principal").html(respuesta);
+			
+
+	// },function(respuesta){
+	// 		$("#principal").html("no encontro nada");
+	// });
+
+	$.ajax({url:"php/PruebasDV/PruebasDV.php"}).then(function(prueba){
+		$("#principal").html(prueba);
+
+	},function(prueba){
+		$("#principal").html("no trae nada");
 	});
 
 
