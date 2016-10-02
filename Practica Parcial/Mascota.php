@@ -27,6 +27,27 @@ class Mascota {
 
 		}
 
+		static function TraerMascotas()
+		{
+			$listadoMascotas= array();
+
+			$archivo=fopen("MascotasIngresadas.php","r");
+
+			while(!FeoF($archivo))
+			{
+				$renglon=fgets($archivo);
+
+				$obj = explode(" - ", $renglon);
+
+				$listadoMascotas[]=$obj;
+
+			}
+
+			fclose($archivo);
+
+			return $listadoMascotas;
+
+		}
 
 
 		function ToString()
