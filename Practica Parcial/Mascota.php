@@ -18,9 +18,20 @@ class Mascota {
 
 		}
 
+		function GuardarEnArchivo($mascota)
+		{
+			$archivo = fopen("MascotasIngresadas.php","a");
+
+			fwrite($archivo, $mascota->ToString());
+			fclose($archivo);
+
+		}
+
+
+
 		function ToString()
 		{
-			echo $this->_nombre." - ".$this->_edad." - ".$this->_fechaDeNac." - ".$this->_tipo." - ".$this->_sexo;
+			return $this->_nombre." - ".$this->_edad." - ".$this->_fechaDeNac." - ".$this->_tipo." - ".$this->_sexo."\r";
 		}
 
 

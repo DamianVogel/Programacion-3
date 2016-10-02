@@ -1,10 +1,35 @@
 <?php 
 		include("Mascota.php");
 
-		$prueba = new Mascota("Rogelian","5","indefinido","rompebolas","hembra");
-
-		$prueba->ToString();
 		
+
+		
+		
+		$seleccion = $_POST['queHacer'];
+
+
+		switch ($seleccion) {
+			case 'GuardarMascota':
+				$nuevaMascota = new Mascota($_POST['mascota'],$_POST['edad'],$_POST['fechaDeNac'],$_POST['sexo'],$_POST['tipo']);
+				$nuevaMascota->GuardarEnArchivo($nuevaMascota);
+
+
+
+				break;
+			
+			default:
+				# code...
+				break;
+		}
+
+
+
+		
+
+
+
+		
+
 
 
 
