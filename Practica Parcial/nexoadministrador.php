@@ -10,7 +10,7 @@
 
 		switch ($seleccion) {
 			case 'GuardarMascota':
-				$nuevaMascota = new Mascota($_POST['mascota'],$_POST['edad'],$_POST['fechaDeNac'],$_POST['sexo'],$_POST['tipo']);
+				$nuevaMascota = new Mascota($_POST['nombre'],$_POST['edad'],$_POST['fechaDeNac'],$_POST['sexo'],$_POST['tipo']);
 				$nuevaMascota->GuardarEnArchivo($nuevaMascota);
 
 

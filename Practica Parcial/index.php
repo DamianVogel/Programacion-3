@@ -16,20 +16,15 @@
 			<form name="form" method="post" id="principal">
 
 			<input type="text" name="nombre" id="nombre" placeholder="Nombre"><Br>
-			<input type="text" name="edad" placeholder="Edad"><Br>
-			<input type="text" name="fecha de nacimiento" placeholder="Fecha de nacimiento"><Br>
-			<input type="radio" name="sexo" value="Macho">Macho<Br>
-			<input type="radio" name="sexo" value="Hembra">Hembra<Br>
-			<select name="tipo" class="CajaUno">
-					<option value="gato">Gato</option>
-					<option value="perro">Perro</option>	
+			<input type="text" name="edad" id="edad" placeholder="Edad"><Br>
+			<input type="text" name="fecha de nacimiento" id="fechaDeNac" placeholder="Fecha de nacimiento"><Br>
+			<input type="radio" name="sexo" id="sexo" value="Macho">Macho<Br>
+			<input type="radio" name="sexo" id="sexo" value="Hembra">Hembra<Br>
+			<select name="tipo" id="tipo" class="CajaUno">
+					<option value="Gato">Gato</option>
+					<option value="Perro">Perro</option>	
 			</select>
 			<button type="button" onclick="GuardarMascota()">Aceptar</button>
-
-
-
-
-
 
 			</form>
 
