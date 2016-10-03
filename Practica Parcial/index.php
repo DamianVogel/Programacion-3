@@ -25,6 +25,7 @@
 					<option value="Perro">Perro</option>	
 			</select>
 			<button type="button" onclick="GuardarMascota()">Aceptar</button>
+			<button type="button" onclick="MostrarGrilla()">Mostrar</button>
 
 			</form>
 

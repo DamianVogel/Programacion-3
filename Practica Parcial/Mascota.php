@@ -2,11 +2,11 @@
 
 class Mascota {
 
-	private $_nombre;
-	private $_edad;
-	private $_fechaDeNac;
-	private $_tipo;
-	private $_sexo;
+	public $nombre;
+	public $edad;
+	public $fechaDeNac;
+	public $tipo;
+	public $sexo;
 
 		function __construct($nombre, $edad, $fechaDeNac, $tipo, $sexo)
 		{
@@ -17,6 +17,14 @@ class Mascota {
 			$this->_sexo=$sexo;
 
 		}
+
+		function GetNombre()
+		{
+			return $this->nombre;
+		}
+
+
+
 
 		function GuardarEnArchivo($mascota)
 		{
@@ -38,13 +46,19 @@ class Mascota {
 				$renglon=fgets($archivo);
 
 				$obj = explode(" - ", $renglon);
+				$obj[0]=trim($obj[0]);
 
-				$listadoMascotas[]=$obj;
+				if($obj[0] != "")
+				{
+				$mascota = new mascota($obj[0],$obj[1],$obj[2],$obj[3],$obj[4]);
 
+				$listadoMascotas[]=$mascota;
+				}
+				
 			}
 
 			fclose($archivo);
-
+			//echo var_dump($listadoMascotas);
 			return $listadoMascotas;
 
 		}

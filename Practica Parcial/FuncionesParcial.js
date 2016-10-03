@@ -1,19 +1,13 @@
+$(document).ready(function(){
+	
+	MostrarGrilla();
+	
+});
+
+
 function GuardarMascota()
 {
-	 
-	// var nombre = $("#nombre").val();
-	// var edad = $("#edad").val();
-	// var fechaDeNac = $("#fecha de nacimiento").val(); 
-	// var sexo = $("#sexo").val();
-	// var tipo = $("#tipo").val();
-
-	// var mascota = {};
-	// mascota.nombre=nombre;
-	// mascota.edad=edad;
-	// mascota.fechaDeNac=fechaDeNac;
-	// mascota.sexo=sexo;
-	// mascota.tipo=tipo;
-
+	 	
 	$.ajax({
 			url:"nexoadministrador.php",
 			type: 'POST',
@@ -34,5 +28,23 @@ function GuardarMascota()
 		alert("falla pero funca como loco");
 
 	});
+
+}
+
+function MostrarGrilla(){
+
+	$.ajax({
+		type: 'POST',
+		url: "nexoadministrador.php",
+		dataType: "html",
+		data:{queHacer:"MostrarGrilla"}
+
+	}).done(function(grilla){
+		$("#divprueba").html(grilla);
+
+	}).fail(function(grilla){
+		$("#divprueba").html("hay que revisarrrrr");
+	});
+
 
 }
