@@ -1,1 +1,1 @@
-Rogelia - 5 - 11/02/2001 - Macho - Gato
+primera - 1 - 01/01/1001 - Macho - GatoSegunda - 2 - 02/02/2002 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - PerroTercera - 3 - 04/04/20063 - Macho - Perro

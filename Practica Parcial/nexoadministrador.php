@@ -13,6 +13,8 @@
 				$nuevaMascota = new Mascota($_POST['nombre'],$_POST['edad'],$_POST['fechaDeNac'],$_POST['sexo'],$_POST['tipo']);
 				$nuevaMascota->GuardarEnArchivo($nuevaMascota);
 
+
+
 				break;
 
 			case 'MostrarGrilla':
@@ -24,30 +26,30 @@
 										<tr>
 											<th>  NOMBRE </th>
 											<th>  EDAD     </th>
-											<th>  FOTO       </th>
-											<th>  FECHA DE NAC     </th>
-											<th>  SEXO        </th>
+											<th>  FECHA DE NAC       </th>
+											<th>  TIPO      </th>
+											<th>  SEXO         </th>
 										</tr> 
 									</thead>';   	
 
 						foreach ($ArrayDeMascotas as $masc){
 							//echo $masc->ToString();
 							$mascota = array();
-							$mascota["nombre"] = $masc->nombre;
-							$mascota["edad"] = $masc->edad;
+							$mascota["nombre"] = $masc->GetNombre();
+							$mascota["edad"] = $masc->GetEdad();
 
 							$mascota = json_encode($mascota);
 						
 							$grilla .= "<tr>
 											<td>".$masc->GetNombre()."</td>
-											<td>".$masc->edad."</td>										
-											<td>".$masc->fechaDeNac."</td>										
-											<td>".$masc->sexo."</td>										
-											<td>".$masc->tipo."</td>										
+											<td>".$masc->GetEdad()."</td>										
+											<td>".$masc->GetFecha()."</td>										
+											<td>".$masc->GetSexo()."</td>										
+											<td>".$masc->GetTipo()."</td>										
 											
 											<td><input type='button' value='Eliminar' class='MiBotonUTN' id='btnEliminar' onclick='EliminarProducto($mascota)' />
 												<input type='button' value='Modificar' class='MiBotonUTN' id='btnModificar' onclick='ModificarProducto($mascota)' /></td>
-										</tr>";
+										</tr><Br>";
 						}
 						
 						$grilla .= '</table>';		

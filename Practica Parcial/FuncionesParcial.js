@@ -22,7 +22,8 @@ function GuardarMascota()
 				 }
 	})
 	.done(function(grilla){
-		$("#divprueba").html("Mascota Guardada con Exito");
+		MostrarGrilla();
+		//$("#divprueba").html("Mascota Guardada con Exito");
 
 	}).fail(function(grilla){
 		alert("falla pero funca como loco");
