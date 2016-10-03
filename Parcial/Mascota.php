@@ -95,12 +95,12 @@ class Mascota {
 				$obj = explode(" - ", $renglon);
 				//$obj[0]=trim($obj[0]);
 
-				// if($obj[0] != "")
-				// {
+				 if($obj[0] != "")
+				{
 				$mascota = new mascota($obj[0],$obj[1],$obj[2],$obj[3],$obj[4]);
 
 				$listadoMascotas[]=$mascota;
-				// }
+				}
 				
 			}
 
@@ -113,7 +113,7 @@ class Mascota {
 
 		function ToString()
 		{
-			return $this->_nombre." - ".$this->_edad." - ".$this->_fechaDeNac." - ".$this->_tipo." - ".$this->_sexo."\r";
+			return $this->_nombre." - ".$this->_edad." - ".$this->_fechaDeNac." - ".$this->_tipo." - ".$this->_sexo."\r\n";
 		}
 
 
