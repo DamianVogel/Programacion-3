@@ -28,8 +28,8 @@ function GuardarMascota()
 					$("#nombre").val("");	
 					$("#edad").val("");
 					$("#fechaDeNac").val("");
-				
-				
+					$("#sexo").val();
+					$("#tipo").val();
 
 
 	}).fail(function(grilla){
@@ -61,6 +61,27 @@ function MostrarGrilla(){
 {
 		
 		$("#nombre").val(mascota.nombre);
+		$("#edad").val(mascota.edad);
+		$("#fechaDeNac").val(mascota.fechaDeNac);
+		$("#sexo").val(mascota.sexo);
+		$("#tipo").val(mascota.tipo);
+
+
+	$.ajax({
+		type: 'POST',
+		url: "nexoadministrador.php",
+		//dataType: "html",
+		data:{queHacer:"ModificarMascota",
+			  mascota:mascota	
+			}
+
+	}).done(function(grilla){
+		MostrarGrilla();
+		alert(grilla);
+	}).fail(function(grilla){
+		$("#divprueba").html("pincho");
+	});
+
 
 
 }

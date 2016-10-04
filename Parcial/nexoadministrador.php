@@ -11,7 +11,7 @@
 		switch ($seleccion) {
 			case 'GuardarMascota':
 				$nuevaMascota = new Mascota($_POST['nombre'],$_POST['edad'],$_POST['fechaDeNac'],$_POST['sexo'],$_POST['tipo']);
-				$nuevaMascota->GuardarEnArchivo($nuevaMascota);
+				Mascota::GuardarEnArchivo($nuevaMascota);
 
 
 
@@ -63,12 +63,13 @@
 						break;		
 				
 				case 'ModificarMascota':
+						echo "hola";
+						$obj = isset($_POST['mascota']) ? json_decode(json_encode($_POST['mascota'])) : NULL;
+			
+						$mascota = new Mascota($obj->nombre,$obj->edad,$obj->fechaDeNac,$obj->sexo,$obj->tipo);
 
-						$obj = isset($_POST['mascota']) ? json_decode(json_encode($_POST['producto'])) : NULL;
-		
-						$p = new Producto($obj->codBarra,$obj->nombre,$obj->archivo);
-
-
+						Mascota::Modificar($mascota);	
+						
 						break;			
 
 
