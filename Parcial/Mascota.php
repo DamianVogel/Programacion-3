@@ -115,21 +115,23 @@ class Mascota {
 
 		static function Modificar($obj)
 		{
+			
+
 			$listadoMascotas = Mascota::TraerMascotas();
 
 			$nuevoList = array();
 			
-			
+			//echo var_dump($listadoMascotas);
 
-			for($i=0;$i< count($listadoMascotas);$i++) 
+			for($i=0;$i<count($listadoMascotas);$i++) 
 			{
-					if(!$obj->_nombre == $masc->_nombre)
+					if(!$obj->_nombre == $listadoMascotas[$i]->_nombre)
 					{
 						$nuevoList[]=$listadoMascotas[$i];							
 					}
 			}
 		
-			echo "hola";
+			
 
 			$archivo= fopen("MascotasIngresadas.php","w");
 

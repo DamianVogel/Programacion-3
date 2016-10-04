@@ -63,7 +63,7 @@
 						break;		
 				
 				case 'ModificarMascota':
-						echo "hola";
+
 						$obj = isset($_POST['mascota']) ? json_decode(json_encode($_POST['mascota'])) : NULL;
 			
 						$mascota = new Mascota($obj->nombre,$obj->edad,$obj->fechaDeNac,$obj->sexo,$obj->tipo);
@@ -72,6 +72,15 @@
 						
 						break;			
 
+				case 'EliminarMascota':
+				
+						$obj = isset($_POST['mascota']) ? json_decode(json_encode($_POST['mascota'])) : NULL;
+			
+						$mascota = new Mascota($obj->nombre,$obj->edad,$obj->fechaDeNac,$obj->sexo,$obj->tipo);
+
+						Mascota::Modificar($mascota);	
+						
+						break;		
 
 			default:
 				# code...

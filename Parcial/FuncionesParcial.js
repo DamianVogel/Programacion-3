@@ -77,7 +77,7 @@ function MostrarGrilla(){
 
 	}).done(function(grilla){
 		MostrarGrilla();
-		alert(grilla);
+		
 	}).fail(function(grilla){
 		$("#divprueba").html("pincho");
 	});
@@ -86,5 +86,28 @@ function MostrarGrilla(){
 
 }
 
+function EliminarMascota(mascota)
+{
+
+	$.ajax({
+		type: 'POST',
+		url: "nexoadministrador.php",
+		//dataType: "html",
+		data:{queHacer:"EliminarMascota",
+			  mascota:mascota	
+			}
+
+	}).done(function(grilla){
+		MostrarGrilla();
+		
+	}).fail(function(grilla){
+		$("#divprueba").html("pincho");
+	});
+
+
+
+
+
+}
 
 
