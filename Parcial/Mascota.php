@@ -95,10 +95,10 @@ class Mascota {
 				$obj = explode("-", $renglon);
 				
 				$obj[0] = trim($obj[0]); 
-				unset($obj[5]);
+				//unset($obj[5]);
 
 
-				 if($obj[0]!="")
+				 if($obj[0]!="" && $obj[0]!=" ")
 				{
 				$mascota = new mascota($obj[0], $obj[1], $obj[2], $obj[3], $obj[4]);
 
