@@ -19,7 +19,7 @@ function ingresar()
 
 	 }),(function(valor){
 		
-		//alert("No anda");
+		alert(valor);
 
 	 });
 		
