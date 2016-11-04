@@ -10,7 +10,16 @@
 
 		switch ($seleccion) {
 			case 'GuardarMascota':
-				$nuevaMascota = new Mascota($_POST['nombre'],$_POST['edad'],$_POST['fechaDeNac'],$_POST['sexo'],$_POST['tipo']);
+				if(isset($_POST['sexo']))
+				{
+					$sexo = $_POST['sexo'];
+				}			
+					else
+					{
+						$sexo = "indefinido";
+					}
+
+				$nuevaMascota = new Mascota($_POST['nombre'],$_POST['edad'],$_POST['fechaDeNac'],$sexo,$_POST['tipo']);
 				Mascota::GuardarEnArchivo($nuevaMascota);
 
 
@@ -64,8 +73,10 @@
 				
 				case 'ModificarMascota':
 
-						$obj = isset($_POST['mascota']) ? json_decode(json_encode($_POST['mascota'])) : NULL;
-			
+						//$obj = isset($_POST['mascota']) ? json_decode(json_encode($_POST['mascota'])) : NULL;
+						
+						$obj = json_decode($_POST['mascota']);	
+
 						$mascota = new Mascota($obj->nombre,$obj->edad,$obj->fechaDeNac,$obj->sexo,$obj->tipo);
 
 						Mascota::Modificar($mascota);	

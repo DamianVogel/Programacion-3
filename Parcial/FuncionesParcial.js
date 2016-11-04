@@ -17,7 +17,8 @@ function GuardarMascota()
 				nombre : $("#nombre").val(),	
 				edad : $("#edad").val(), 
 				fechaDeNac : $("#fechaDeNac").val(),
-				sexo : $("#sexo").val(),
+				sexo : $('input:radio[name=sexo]:checked').val(),
+				//sexoh : $("#sexohembra").attr(),
 				tipo : $("#tipo").val()
 				 }
 	})
@@ -63,7 +64,10 @@ function MostrarGrilla(){
 		$("#nombre").val(mascota.nombre);
 		$("#edad").val(mascota.edad);
 		$("#fechaDeNac").val(mascota.fechaDeNac);
-		$("#sexo").val(mascota.sexo);
+		//$("#sexo").val(mascota.sexo);
+
+		document.getElementById("sexo").checked = true;
+
 		$("#tipo").val(mascota.tipo);
 
 
