@@ -18,14 +18,10 @@
 			<input type="text" name="nombre" id="nombre" placeholder="Nombre"><Br>
 			<input type="text" name="edad" id="edad" placeholder="Edad"><Br>
 			<input type="text" name="fecha de nacimiento" id="fechaDeNac" placeholder="Fecha de nacimiento"><Br>
-<<<<<<< HEAD
-			
-			<input type="radio" name="sexo" id="sexohembra" value="Hembra">Hembra<Br>
-			<input type="radio" name="sexo" id="sexomacho" value="Macho">Macho<Br>
-=======
+
 			<input type="radio" name="sexo" id="sexo" <?php if(isset($_POST['sexo'])) echo "checked"; ?>	value="Macho">Macho<Br>
 			<input type="radio" name="sexo" id="sexo" value="Hembra">Hembra<Br>
->>>>>>> origin/master
+
 			<select name="tipo" id="tipo" class="CajaUno">
 					<option value="Gato">Gato</option>
 					<option value="Perro">Perro</option>	
