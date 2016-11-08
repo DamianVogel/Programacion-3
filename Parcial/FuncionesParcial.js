@@ -11,29 +11,31 @@ function GuardarMascota()
 	$.ajax({
 			url:"nexoadministrador.php",
 			type: 'POST',
-			//dataType: "json",
+			
 			data:{
 				queHacer:"GuardarMascota",
 				nombre : $("#nombre").val(),	
 				edad : $("#edad").val(), 
 				fechaDeNac : $("#fechaDeNac").val(),
 				sexo : $('input:radio[name=sexo]:checked').val(),
-				//sexoh : $("#sexohembra").attr(),
 				tipo : $("#tipo").val()
 				 }
 	})
-	.done(function(grilla){
+	.then(function(grilla){
 		
 		alert("Mascota Ingresada con Exito");
+		
 		MostrarGrilla();
+					//alert($("#tipo").val());
+
 					$("#nombre").val("");	
 					$("#edad").val("");
 					$("#fechaDeNac").val("");
-					$("#sexo").val();
-					$("#tipo").val();
+					$("#sexo").prop('checked',false);
+					
 
-
-	}).fail(function(grilla){
+					
+	},function(grilla){
 		alert("Error la mascota no fue guardada");
 
 	});
@@ -48,10 +50,10 @@ function MostrarGrilla(){
 		//dataType: "html",
 		data:{queHacer:"MostrarGrilla"}
 
-	}).done(function(grilla){
+	}).then(function(grilla){
 		$("#divprueba").html(grilla);
 
-	}).fail(function(grilla){
+	},function(grilla){
 		$("#divprueba").html("hay que revisarrrrr");
 	});
 
@@ -63,26 +65,34 @@ function MostrarGrilla(){
 		
 		$("#nombre").val(mascota.nombre);
 		$("#edad").val(mascota.edad);
-		$("#fechaDeNac").val(mascota.fechaDeNac);
-		//$("#sexo").val(mascota.sexo);
+		$("#fechaDeNac").val(mascota.fechaDeNac);		
+		//$("#tipo").attr("mascota.tipo");
+		
+		//console.log(mascota);
 
-		document.getElementById("sexo").checked = true;
-
-		$("#tipo").val(mascota.tipo);
-
-
-	$.ajax({
-		type: 'POST',
-		url: "nexoadministrador.php",
-		//dataType: "html",
-		data:{queHacer:"ModificarMascota",
-			  mascota:mascota	
+		if(mascota.tipo == "Perro")
+		{
+			alert("Es un perro");
+		}//$("#tipo").val(mascota.tipo);
+			else
+			{
+				alert("No lo toma");
 			}
 
-	}).done(function(grilla){
+	$.ajax({
+				type: 'POST',
+				url: "nexoadministrador.php",
+				data:
+				{	queHacer:"ModificarMascota",
+			  		mascota:mascota	
+					
+				}
+
+	}).then(function(grilla){
+		
 		MostrarGrilla();
 		
-	}).fail(function(grilla){
+	},function(grilla){
 		$("#divprueba").html("pincho");
 	});
 
@@ -101,10 +111,11 @@ function EliminarMascota(mascota)
 			  mascota:mascota	
 			}
 
-	}).done(function(grilla){
+	}).then(function(grilla){
+		
 		MostrarGrilla();
 		
-	}).fail(function(grilla){
+	}, function(grilla){
 		$("#divprueba").html("pincho");
 	});
 

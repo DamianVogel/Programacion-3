@@ -10,6 +10,7 @@
 
 		switch ($seleccion) {
 			case 'GuardarMascota':
+				
 				if(isset($_POST['sexo']))
 				{
 					$sexo = $_POST['sexo'];
@@ -19,7 +20,7 @@
 						$sexo = "indefinido";
 					}
 
-				$nuevaMascota = new Mascota($_POST['nombre'],$_POST['edad'],$_POST['fechaDeNac'],$sexo,$_POST['tipo']);
+				$nuevaMascota = new Mascota($_POST['nombre'],$_POST['edad'],$_POST['fechaDeNac'],$_POST['tipo'],$sexo);
 				Mascota::GuardarEnArchivo($nuevaMascota);
 
 
@@ -57,8 +58,8 @@
 											<td>".$masc->GetNombre()."</td>
 											<td>".$masc->GetEdad()."</td>										
 											<td>".$masc->GetFecha()."</td>										
-											<td>".$masc->GetSexo()."</td>										
 											<td>".$masc->GetTipo()."</td>										
+											<td>".$masc->GetSexo()."</td>										
 											
 											<td><input type='button' value='Eliminar' class='MiBotonUTN' id='btnEliminar' onclick='EliminarMascota($mascota)' />
 												<input type='button' value='Modificar' class='MiBotonUTN' id='btnModificar' onclick='ModificarMascota($mascota)' /></td>
@@ -73,9 +74,11 @@
 				
 				case 'ModificarMascota':
 
-						//$obj = isset($_POST['mascota']) ? json_decode(json_encode($_POST['mascota'])) : NULL;
+						$obj = isset($_POST['mascota']) ? json_decode(json_encode($_POST['mascota'])) : NULL;
 						
-						$obj = json_decode($_POST['mascota']);	
+						//$obj = json_decode($_POST['mascota']);	
+
+						echo var_dump($obj);
 
 						$mascota = new Mascota($obj->nombre,$obj->edad,$obj->fechaDeNac,$obj->sexo,$obj->tipo);
 

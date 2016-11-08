@@ -1,0 +1,2 @@
+<?php if(isset($_POST['sexo']) && $mascota->GetSexo() =="Macho") echo "checked"; ?>
+<?php if(isset($_POST['sexo']) && $mascota->GetSexo() =="Hembra") echo "checked";?>
