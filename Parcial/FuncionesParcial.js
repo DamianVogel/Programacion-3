@@ -66,18 +66,23 @@ function MostrarGrilla(){
 		$("#nombre").val(mascota.nombre);
 		$("#edad").val(mascota.edad);
 		$("#fechaDeNac").val(mascota.fechaDeNac);		
-		//$("#tipo").attr("mascota.tipo");
+		//$("#tipo").attr();
 		
-		//console.log(mascota);
+		//$('.tipo option[value=Perro]').attr('selected','selected');
 
 		if(mascota.tipo == "Perro")
 		{
-			alert("Es un perro");
-		}//$("#tipo").val(mascota.tipo);
+			//alert("Es un perro");
+		$("#tipo").val("Perro");
+		}	
 			else
 			{
-				alert("No lo toma");
+				$("#tipo").val("Gato");
 			}
+
+		
+
+
 
 	$.ajax({
 				type: 'POST',
